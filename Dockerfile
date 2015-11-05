@@ -11,6 +11,7 @@ RUN cd /tmp \
     && cd .. \
     && rm -fr OpenBLAS
 COPY openblas.conf /etc/ld.so.conf.d/
+RUN ldconfig
 RUN pip install cython
 RUN cd /tmp \
     && git clone -b v1.10.1 --depth 1 https://github.com/numpy/numpy
